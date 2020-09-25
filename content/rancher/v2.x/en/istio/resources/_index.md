@@ -34,13 +34,13 @@ istio-ingressgateway | 2000m | 1024Mi  | 10m |  40Mi | Y
 
 You can individually configure the resource allocation for each type of Istio component. This section includes the default resource allocations for each component.
 
-To make it easier to schedule the workloads to a node, a cluster administrator can reduce the CPU and memory resource requests for the component. However, the default CPU and memory allocations are the minimum that we recommend.
+To make it easier to schedule the workloads to a node, a cluster-admin can reduce the CPU and memory resource requests for the component. However, the default CPU and memory allocations are the minimum that we recommend.
 
 You can find more information about Istio configuration in the [official Istio documentation](https://istio.io/docs/concepts/what-is-istio).
 
 To configure the resources allocated to an Istio component,
 
-1. In Rancher Dashboard, navigate to your Istio installation in Apps & Marketplace
+1. In the Rancher **Cluster Explorer**, navigate to your Istio installation in Apps & Marketplace
 1. Click **Upgrade** to edit the base components via changes the values.yaml or add an [overlay file](link to overlayfile install instructions). 
 1. Change the CPU or memory allocations, the nodes where each component will be scheduled to, or the node tolerations.
 1. Click **Upgrade.** to rollout changes

@@ -9,8 +9,7 @@ This cluster uses the default Nginx controller to allow traffic into the cluster
 
 Only a user with the following [Kubernetes default roles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) assigned can configure and install Istio in a Kubernetes cluster. 
 
- - Admin
- - Edit
+ - `cluster-admin`
 
 > If the cluster has a Pod Security Policy enabled there are [prerequisites steps.]({{<baseurl>}}/rancher/v2.x/en/cluster-admin/tools/istio/setup/enable-istio-in-cluster/enable-istio-with-psp/)
 

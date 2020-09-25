@@ -72,4 +72,4 @@ Additional Ingresses can be configured via the [overlay file] (overlay file link
 
 ### Egress Support
 
-By default an Egress gateway is not installed, but can be configured via the [overlay file] (overlay file link here)
+By default the Egress gateway is disabled, but can be enabled on install through the values.yaml or via the [overlay file] (overlay file link here)

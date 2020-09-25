@@ -24,11 +24,11 @@ This service mesh provides features that include but are not limited to the foll
 
 After Istio is enabled in a cluster, you can leverage Istio's control plane functionality with `kubectl`.
 
-Rancher's Istio integration comes with comprehensive visualization aids:
+Rancher's Istio integration comes with a comprehensive visualization aid:
 
 - **Get the full picture of your microservice architecture with Kiali.** [Kiali](https://www.kiali.io/) provides a diagram that shows the services within a service mesh and how they are connected, including the traffic rates and latencies between them. You can check the health of the service mesh, or drill down to see the incoming and outgoing requests to a single component.
 
-Istio needs to be set up by a Rancher administrator or cluster administrator before it can be used in a project.
+Istio needs to be set up by a `cluster-admin` before it can be used in a project.
 
 # Prerequisites
 
@@ -38,13 +38,13 @@ Before enabling Istio, we recommend that you confirm that your Rancher worker no
 
 Refer to the [setup guide]({{<baseurl>}}/rancher/v2.x/en/cluster-admin/tools/istio/setup) for instructions on how to set up Istio and use it in a project.
 
-# Disabling Istio
+# Remove Istio
 
-To remove Istio components from a cluster, namespace, or workload, refer to the section on [disabling Istio.]({{<baseurl>}}/rancher/v2.x/en/cluster-admin/tools/istio/disabling-istio)
+To remove Istio components from a cluster, namespace, or workload, refer to the section on [uninstalling Istio.]({{<baseurl>}}/rancher/v2.x/en/cluster-admin/tools/istio/disabling-istio)
 
 # Accessing Visualizations
 
-> By default, only cluster owners have access to Jaeger and Kiali. For instructions on how to allow project members to access them, refer to [Access to Visualizations.]({{<baseurl>}}/rancher/v2.x/en/cluster-admin/tools/istio/rbac/#access-to-visualizations)
+> By default, only cluster-admins have access Kiali. For instructions on how to allow admin, edit or views roles to access them, refer to [Access to Visualizations.]({{<baseurl>}}/rancher/v2.x/en/cluster-admin/tools/istio/rbac/#access-to-visualizations)
 
 After Istio is set up in a cluster, Grafana, Prometheus, Jaeger, and Kiali are available in the Rancher UI.
 
@@ -80,6 +80,6 @@ For more information on the Istio sidecar, refer to the [Istio docs](https://ist
 
 ### Two Ingresses
 
-By default, each Rancher-provisioned cluster has one NGINX ingress controller allowing traffic into the cluster. To allow Istio to receive external traffic, you need to enable the Istio ingress gateway for the cluster. The result is that your cluster will have two ingresses.
+By default, each Rancher-provisioned cluster has one NGINX ingress controller allowing traffic into the cluster. To allow Istio to receive external traffic, you need to enable the Istio ingress gateway for the cluster. The result is that your cluster will have two ingresses. Additional Ingress controllers can be enabled via the [overlay file.] (link to overlay file section)
 
 ![In an Istio-enabled cluster, you can have two ingresses: the default Nginx ingress, and the default Istio controller.]({{<baseurl>}}/img/rancher/istio-ingress.svg)
